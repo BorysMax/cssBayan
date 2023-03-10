@@ -1,23 +1,18 @@
 html {
   font-size: 16px;
+  color: black;
 }
 
-.accordion {
+.accordion,
+h1 {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.accordion:hover .accordion-plus {
-  display: block;
-}
-
-.accordion-plus {
-  display: none;
-}
-
-.accordion-minus {
-  display: none;
+.accordion:hover .accordion-title p{
+  color: black;
+  transition: 0.5s ease-in-out;
 }
 
 .accordion-item {
@@ -37,14 +32,6 @@ html {
   display: block;
 }
 
-.accordion-item:hover .accordion-plus {
-  display: none;
-}
-
-.accordion-item:hover .accordion-minus {
-  display: block;
-}
-
 ._open {
   display: block;
 }
@@ -53,4 +40,67 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.accordion-title p {
+  color: blue;
+  transition: 0.5s ease-in-out;
+}
+
+.accordion-item:hover .accordion-title p {
+  color: black;
+}
+
+.cross-box {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+
+.cross,
+.cross-no-change {
+  display: none;
+  position: absolute; top: 20px; left: 10px;
+}
+
+.accordion:hover .cross,
+.accordion:hover .cross-no-change {
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+
+.cross:before,
+.cross:after,
+.cross-no-change::before,
+.cross-no-change::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background: gray;
+  transition: 0.5s ease-in-out;
+}
+
+.cross:before {
+  transform: rotate(90deg);
+}
+
+.cross:after {
+  transform: rotate(0deg);
+}
+
+.accordion-item:hover .cross::before {
+  transform: rotate(45deg);
+}
+
+.accordion-item:hover .cross::after {
+  transform: rotate(-45deg);
+}
+
+.cross-no-change::after {
+  transform: rotate(-45deg);
+}
+
+.cross-no-change::before {
+  transform: rotate(45deg);
 }
