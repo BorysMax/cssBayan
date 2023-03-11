@@ -119,7 +119,7 @@ input[name="accordion"]:checked + .accordion-title,
   opacity: 0;
   /* scale: 0.5;  */
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   /* transition: scale 0.5s ease-in-out;  */
 }
 
@@ -130,11 +130,11 @@ input[name="accordion"]:checked + .accordion-title + .content-img,
   opacity: 1;
   /* scale: 1;  */
   visibility: visible;
-  transition: opacity 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
   /* transition: scale 0.5s ease-in-out;  */
 }
 
 .accordion-item:active .content-img {
   scale: 0.9;
-  transition: scale 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
