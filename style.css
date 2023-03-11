@@ -1,17 +1,57 @@
 html {
-  font-family: 'Rubik Wet Paint', sans-serif;
-  font-size: 24px;
+  font-family: 'Rubik', sans-serif;
+  background-color: rgb(250, 240, 230);
 }
 
-.container,
-h1 {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+@media (max-width: 1920px) {
+  .container,
+  h1 {
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  html {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 820px) {
+  .container,
+  h1 {
+    width: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  html {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 320px) {
+  .container,
+  h1 {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  html {
+    font-size: 1.2em;
+  }
 }
 
 h1 {
   color: black;
+  margin-top: 1em;
+}
+
+.line {
+  width: 100%;
+  margin: 0.5em;
+  height: 0.1em;
+  background: #5F9EA0;
 }
 
 .accordion-item {
@@ -22,33 +62,18 @@ h1 {
 }
 
 .accordion-title {
-  /* margin-right: auto; */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* 
-.content-img {
-  display: none;
-  transition: 0.5s, ease-in-out;
-} */
-
-/* .content-img label:hover {
-  display: block;
-  transition: 0.5s, ease-in-out;
-}
- */
 label {
   cursor: pointer;
   display: block;
-  color: rgb(64, 64, 223);
-/*   padding: 15px 20px; */
+  color: #1E90FF;
   width: 100%;
   box-sizing: border-box;
-  /* border-bottom: 1px solid #b3b3d6; */
- /*  z-index: 100; */
   transition: 0.5s, ease-in-out;
 }
 
@@ -59,11 +84,6 @@ label:hover {
 input{
   display: none;
 }
-
-/* .container:hover + .plus {
-  content: '+';
-  color: black;
-} */
 
 .plus {
   display: none;
@@ -85,34 +105,23 @@ input[name="accordion"]:checked + .accordion-title .plus,
   color: black;
 }
 
-.accordion-item:checked + .accordion-title,
+input[name="accordion"]:checked + .accordion-title,
 .accordion-item:hover + .accordion-title {
   color: black;
 }
-/* .container input:checked + label {
-  background-color: #285f8f;
-  color: #FFF;
-} */
 
-/* input:checked .content-img, */
-/* .accordion-item:hover .content-img {
-  height: auto;
-  margin: 0 auto;
-}  */
-
-.accordion-item .content-img {
-  display: none;
+.content-img {
+  height: 0;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.accordion-item input[type="radio"]:checked + .accordion-title {
-  /* Стили для текста блока */
-  color: black;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.accordion-item input[type="radio"]:checked + .accordion-title + .content-img,
+input[name="accordion"]:checked + .accordion-title + .content-img,
 .accordion-item:hover .content-img {
-  /* Стили для изображения блока */
+  height: auto;
+  margin: 0.2em;
   opacity: 1;
-  display: block;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
 }
