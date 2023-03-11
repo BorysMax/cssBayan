@@ -126,7 +126,7 @@ input[name="accordion"]:checked + .accordion-title,
 
 input[name="accordion"]:checked + .accordion-title + .content-img,
 .accordion-item:hover .content-img {
-  height: auto;
+  height: 100%;
   margin: 0.2em;
   opacity: 1;
   /* scale: 1;  */
