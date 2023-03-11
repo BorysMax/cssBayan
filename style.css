@@ -116,16 +116,20 @@ input[name="accordion"]:checked + .accordion-title,
 
 .content-img {
   height: 0;
-  opacity: 0;
+  /* opacity: 0;  */
+  scale: 0.5;
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out;
+  /* transition: opacity 0.5s ease-in-out; */
+  transition: scale 0.5s ease-in-out;
 }
 
 input[name="accordion"]:checked + .accordion-title + .content-img,
 .accordion-item:hover .content-img {
   height: auto;
   margin: 0.2em;
-  opacity: 1;
+  /* opacity: 1; */
+  scale: 1;
   visibility: visible;
-  transition: opacity 0.5s ease-in-out;
+  /* transition: opacity 0.5s ease-in-out; */
+  transition: scale 0.5s ease-in-out;
 }
