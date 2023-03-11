@@ -3,6 +3,10 @@ html {
   background-color: rgb(250, 240, 230);
 }
 
+body {
+  overflow-y: scroll;
+}
+
 @media (max-width: 1920px) {
   .container,
   h1 {
