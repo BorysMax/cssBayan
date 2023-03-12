@@ -7,6 +7,42 @@ body {
   overflow-y: scroll;
 }
 
+@media(hover:hover) {
+  
+  label:hover {
+    color: black;
+  }
+  
+  .container:hover .plus {
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .accordion-item:hover .plus {
+    transition: transform .3s;
+    transform: rotate(45deg);
+  }
+  
+  .container:hover .accordion-title {
+    color: black;
+  }
+  
+  .accordion-item:hover + .accordion-title {
+    color: black;
+  }
+  
+  .accordion-item:hover .content-img {
+    height: 100%;
+    margin: 0.2em;
+    opacity: 1;
+    /* scale: 1;  */
+    visibility: visible;
+    transition: all 0.8s ease-in-out;
+    /* transition: scale 0.5s ease-in-out;  */
+  }
+  
+}
+  
 @media (max-width: 1920px) {
   .container,
   h1 {
@@ -81,10 +117,6 @@ label {
   transition: 0.5s, ease-in-out;
 }
 
-label:hover {
-  color: black;
-}
-
 input{
   display: none;
 }
@@ -94,23 +126,12 @@ input{
   transition: all 0.3s ease-in-out;
 }
 
-.container:hover .plus {
-  display: block;
-  transition: all 0.3s ease-in-out;
-}
-
-input[name="accordion"]:checked + .accordion-title .plus,
-.accordion-item:hover .plus {
+input[name="accordion"]:checked + .accordion-title .plus {
   transition: transform .3s;
   transform: rotate(45deg);
 }
 
-.container:hover .accordion-title {
-  color: black;
-}
-
-input[name="accordion"]:checked + .accordion-title,
-.accordion-item:hover + .accordion-title {
+input[name="accordion"]:checked + .accordion-title {
   color: black;
 }
 
@@ -124,8 +145,7 @@ input[name="accordion"]:checked + .accordion-title,
   /* transition: scale 0.5s ease-in-out;  */
 }
 
-input[name="accordion"]:checked + .accordion-title + .content-img,
-.accordion-item:hover .content-img {
+input[name="accordion"]:checked + .accordion-title + .content-img {
   height: 100%;
   margin: 0.2em;
   opacity: 1;
